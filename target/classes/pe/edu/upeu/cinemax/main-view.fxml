@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="pe.edu.upeu.cinemax.controller.MainController" styleClass="root">
+    <top>
+        <VBox styleClass="header">
+            <Label text="🎬 CineMax" styleClass="title"/>
+            <Label text="Sistema de venta de entradas, clientes, películas y boletas" styleClass="subtitle"/>
+        </VBox>
+    </top>
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="🎟 Venta">
+                <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="transparent-scroll">
+                    <HBox spacing="18" styleClass="page" prefHeight="640">
+                        <VBox spacing="12" prefWidth="610" styleClass="card">
+                            <Label text="COMPRA DE ENTRADA" styleClass="section"/>
+                            <GridPane hgap="10" vgap="10">
+                                <Label text="Cliente:" GridPane.rowIndex="0"/>
+                                <ComboBox fx:id="clienteBox" prefWidth="400" GridPane.columnIndex="1" onAction="#seleccionarCliente"/>
+                                <Label text="Película:" GridPane.rowIndex="1"/>
+                                <ComboBox fx:id="peliculaBox" prefWidth="400" GridPane.columnIndex="1" onAction="#actualizar"/>
+                                <Label text="Horario:" GridPane.rowIndex="2"/>
+                                <ComboBox fx:id="horarioBox" prefWidth="400" GridPane.columnIndex="1" onAction="#actualizar"/>
+                                <Label text="Entrada:" GridPane.rowIndex="3"/>
+                                <ComboBox fx:id="tipoBox" prefWidth="400" GridPane.columnIndex="1" onAction="#actualizar"/>
+                                <Label text="Combo:" GridPane.rowIndex="4"/>
+                                <ComboBox fx:id="comboBox" prefWidth="400" GridPane.columnIndex="1" onAction="#actualizar"/>
+                            </GridPane>
+                            <Label text="SELECCIONA TU ASIENTO" styleClass="section"/>
+                            <Label text="PANTALLA" styleClass="screen"/>
+                            <GridPane fx:id="asientos" hgap="7" vgap="7" alignment="CENTER"/>
+                        </VBox>
+                        <VBox spacing="12" prefWidth="400" styleClass="card">
+                            <Label text="RESUMEN DE VENTA" styleClass="section"/>
+                            <Label fx:id="resumen" wrapText="true" styleClass="summary" VBox.vgrow="ALWAYS"/>
+                            <HBox spacing="8">
+                                <Button text="VENDER" onAction="#vender" styleClass="primary"/>
+                                <Button text="BOLETA" onAction="#boleta"/>
+                                <Button text="LIMPIAR" onAction="#limpiar"/>
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                </ScrollPane>
+            </Tab>
+
+            <Tab text="🎬 Películas">
+                <VBox spacing="12" styleClass="page">
+                    <Label text="CRUD DE PELÍCULAS" styleClass="section"/>
+                    <HBox spacing="10">
+                        <TextField fx:id="peliculaTituloField" promptText="Título" HBox.hgrow="ALWAYS"/>
+                        <TextField fx:id="peliculaGeneroField" promptText="Género" HBox.hgrow="ALWAYS"/>
+                        <TextField fx:id="peliculaDuracionField" text="120" promptText="Duración (min)" prefWidth="130"/>
+                        <TextField fx:id="peliculaClasificacionField" text="APT" promptText="Clasificación" prefWidth="120"/>
+                    </HBox>
+                    <HBox spacing="8">
+                        <Button text="NUEVO" onAction="#nuevaPelicula"/>
+                        <Button text="GUARDAR / ACTUALIZAR" onAction="#guardarPelicula" styleClass="primary"/>
+                        <Button text="ELIMINAR" onAction="#eliminarPelicula" styleClass="danger"/>
+                    </HBox>
+                    <TableView fx:id="peliculaTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="peliculaIdCol" text="ID" prefWidth="55"/>
+                            <TableColumn fx:id="peliculaTituloCol" text="Título" prefWidth="250"/>
+                            <TableColumn fx:id="peliculaGeneroCol" text="Género" prefWidth="150"/>
+                            <TableColumn fx:id="peliculaDuracionCol" text="Duración" prefWidth="100"/>
+                            <TableColumn fx:id="peliculaClasificacionCol" text="Clasificación" prefWidth="130"/>
+                        </columns>
+                    </TableView>
+                    <Label text="Selecciona una fila para editarla. Los cambios se reflejan también en Venta." styleClass="hint"/>
+                </VBox>
+            </Tab>
+
+            <Tab text="👤 Clientes">
+                <VBox spacing="12" styleClass="page">
+                    <Label text="CRUD DE CLIENTES" styleClass="section"/>
+                    <HBox spacing="10">
+                        <TextField fx:id="dniField" promptText="DNI" prefWidth="130"/>
+                        <TextField fx:id="nombreField" promptText="Nombre completo" HBox.hgrow="ALWAYS"/>
+                        <TextField fx:id="telefonoField" promptText="Teléfono" prefWidth="160"/>
+                    </HBox>
+                    <HBox spacing="8">
+                        <Button text="NUEVO" onAction="#nuevoCliente"/>
+                        <Button text="GUARDAR / ACTUALIZAR" onAction="#guardarCliente" styleClass="primary"/>
+                        <Button text="ELIMINAR" onAction="#eliminarCliente" styleClass="danger"/>
+                    </HBox>
+                    <TableView fx:id="clienteTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="clienteIdCol" text="ID" prefWidth="55"/>
+                            <TableColumn fx:id="clienteDniCol" text="DNI" prefWidth="130"/>
+                            <TableColumn fx:id="clienteNombreCol" text="Nombre" prefWidth="300"/>
+                            <TableColumn fx:id="clienteTelefonoCol" text="Teléfono" prefWidth="160"/>
+                        </columns>
+                    </TableView>
+                    <Label text="El cliente general se mantiene como registro predeterminado." styleClass="hint"/>
+                </VBox>
+            </Tab>
+
+            <Tab text="🧾 Boletas / Ventas">
+                <VBox spacing="12" styleClass="page">
+                    <Label text="REGISTRO DE BOLETAS" styleClass="section"/>
+                    <HBox spacing="8">
+                        <Button text="VER BOLETA" onAction="#verBoletaSeleccionada" styleClass="primary"/>
+                        <Button text="ELIMINAR VENTA" onAction="#eliminarVenta" styleClass="danger"/>
+                        <Label text="Las boletas se numeran automáticamente como B001-00000001." styleClass="hint"/>
+                    </HBox>
+                    <TableView fx:id="ventaTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="ventaIdCol" text="ID" prefWidth="55"/>
+                            <TableColumn fx:id="ventaBoletaCol" text="N° Boleta" prefWidth="120"/>
+                            <TableColumn fx:id="ventaClienteCol" text="Cliente" prefWidth="230"/>
+                            <TableColumn fx:id="ventaPeliculaCol" text="Película" prefWidth="230"/>
+                            <TableColumn fx:id="ventaFechaCol" text="Fecha" prefWidth="150"/>
+                            <TableColumn fx:id="ventaTotalCol" text="Total" prefWidth="100"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

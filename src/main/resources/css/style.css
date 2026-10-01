@@ -1,0 +1,8 @@
+.root { -fx-font-family: "Arial"; -fx-background-color: #f4f4f4; }
+.tab-pane { -fx-background-color: #f4f4f4; }
+.tab { -fx-font-size: 14px; }
+.label { -fx-text-fill: #222222; }
+.button { -fx-padding: 7 14; }
+.table-view { -fx-background-color: white; }
+.text-area { -fx-font-family: "Consolas"; -fx-font-size: 13px; }
+.combo-box, .text-field { -fx-pref-height: 32px; }
