@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="pe.edu.upeu.cinemax.controller.ClienteController"
+      styleClass="modulo" spacing="10.0">
+
+    <HBox alignment="CENTER_LEFT" spacing="8.0">
+        <Label text="Clientes del cine" styleClass="titulo-modulo"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label text="Buscar:" styleClass="campo-etiqueta"/>
+        <TextField fx:id="txtBuscar" promptText="DNI o nombre" prefWidth="220.0"/>
+    </HBox>
+
+    <HBox spacing="12.0" VBox.vgrow="ALWAYS">
+        <VBox prefWidth="330.0" spacing="8.0">
+            <Label fx:id="lblFormTitulo" text="Nuevo cliente" styleClass="titulo-form"/>
+
+            <GridPane hgap="8.0" vgap="8.0">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="80.0" prefWidth="100.0"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <Label text="DNI *" styleClass="campo-etiqueta" GridPane.rowIndex="0"/>
+                <TextField fx:id="txtDni" promptText="8 dígitos" maxWidth="Infinity"
+                           GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="Nombre *" styleClass="campo-etiqueta" GridPane.rowIndex="1"/>
+                <TextField fx:id="txtNombreCliente" promptText="Nombre completo" maxWidth="Infinity"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="Dirección" styleClass="campo-etiqueta" GridPane.rowIndex="2"/>
+                <TextField fx:id="txtDireccion" promptText="Av. / Jr. y número" maxWidth="Infinity"
+                           GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="Celular" styleClass="campo-etiqueta" GridPane.rowIndex="3"/>
+                <TextField fx:id="txtCelular" promptText="9 dígitos" maxWidth="Infinity"
+                           GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            </GridPane>
+
+            <Label text="El DNI no se puede modificar una vez registrado."
+                   styleClass="texto-ayuda" wrapText="true"/>
+            <Label fx:id="lblMensaje" wrapText="true"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <HBox spacing="8.0">
+                <Button text="Guardar" onAction="#onGuardar" styleClass="boton-primario"
+                        maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+                <Button text="Cancelar" onAction="#onCancelar" styleClass="boton-secundario"
+                        maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+            </HBox>
+        </VBox>
+
+        <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                <Button text="Nuevo" onAction="#onNuevo" styleClass="boton-secundario"/>
+                <Button text="Eliminar" onAction="#onEliminar" styleClass="boton-peligro"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="lblConteo" text="0 registros" styleClass="texto-conteo"/>
+            </HBox>
+
+            <TableView fx:id="tblClientes" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colDni" text="DNI" prefWidth="110.0"/>
+                    <TableColumn fx:id="colNombre" text="Nombre" prefWidth="220.0"/>
+                    <TableColumn fx:id="colDireccion" text="Dirección" prefWidth="230.0"/>
+                    <TableColumn fx:id="colCelular" text="Celular" prefWidth="120.0"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
+</VBox>

@@ -5,7 +5,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import pe.edu.upeu.cinemax.controller.MainController;
 
-public class CineMax extends Application {
+public class
+CineMax extends Application {
     @Override
     public void start(Stage stage) {
         MainController controller = new MainController();

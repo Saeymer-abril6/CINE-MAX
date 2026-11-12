@@ -1,0 +1,224 @@
+/* ============================================================
+   CINEMAX - SISTEMA DE VENTAS DE ENTRADAS Y DULCERÍA
+   Estilo sencillo de proyecto académico JavaFX.
+   Paleta: azul marino, dorado y rojo.
+   ============================================================ */
+
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 12px;
+    -fx-background-color: #eef1f6;
+}
+
+.label {
+    -fx-text-fill: #1b2433;
+}
+
+/* ---------------- LOGIN ---------------- */
+.login-fondo {
+    -fx-background-color: linear-gradient(to bottom, #0d1b2a, #1b263b);
+}
+
+.login-titulo {
+    -fx-text-fill: #f5c518;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.login-pista {
+    -fx-text-fill: #c9d3e0;
+    -fx-font-size: 11px;
+}
+
+.login-fondo .label {
+    -fx-text-fill: #e6ecf3;
+}
+
+.login-fondo .login-titulo {
+    -fx-text-fill: #f5c518;
+}
+
+.login-fondo .login-pista {
+    -fx-text-fill: #c9d3e0;
+}
+
+.login-fondo .boton-primario {
+    -fx-background-color: #f5c518;
+    -fx-text-fill: #0d1b2a;
+}
+
+.login-fondo .boton-primario:hover {
+    -fx-background-color: #e0b400;
+}
+
+/* ---------------- MÓDULOS ---------------- */
+.modulo {
+    -fx-padding: 12;
+    -fx-background-color: #ffffff;
+}
+
+.titulo-modulo {
+    -fx-text-fill: #14213d;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.titulo-form {
+    -fx-text-fill: #b8860b;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.campo-etiqueta {
+    -fx-text-fill: #333333;
+}
+
+.texto-ayuda {
+    -fx-text-fill: #6b7688;
+    -fx-font-size: 11px;
+}
+
+.texto-conteo {
+    -fx-text-fill: #14213d;
+    -fx-font-weight: bold;
+}
+
+.texto-resumen {
+    -fx-text-fill: #b8860b;
+    -fx-font-weight: bold;
+}
+
+.total-menor {
+    -fx-text-fill: #14213d;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.total-mayor {
+    -fx-text-fill: #c62828;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* ---------------- BOTONES ---------------- */
+.button {
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+    -fx-padding: 5 14 5 14;
+}
+
+.boton-primario {
+    -fx-background-color: #14213d;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+.boton-primario:hover {
+    -fx-background-color: #22355c;
+}
+
+.boton-secundario {
+    -fx-background-color: #e3e8f0;
+    -fx-text-fill: #14213d;
+    -fx-border-color: #b6c2d4;
+    -fx-border-radius: 4;
+}
+
+.boton-secundario:hover {
+    -fx-background-color: #d2dae6;
+}
+
+.boton-peligro {
+    -fx-background-color: #e53935;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+.boton-peligro:hover {
+    -fx-background-color: #c62828;
+}
+
+/* ---------------- MENSAJES ---------------- */
+.error {
+    -fx-text-fill: #c62828;
+    -fx-font-weight: bold;
+}
+
+.exito {
+    -fx-text-fill: #2e7d32;
+    -fx-font-weight: bold;
+}
+
+/* ---------------- TABLAS ---------------- */
+.table-view {
+    -fx-border-color: #c3ccda;
+    -fx-border-radius: 3;
+    -fx-background-color: #ffffff;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #14213d;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 30;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #f5c518;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f6f8fb;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #f5c518;
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: #14213d;
+}
+
+/* ---------------- MENÚ Y PESTAÑAS ---------------- */
+.menu-bar {
+    -fx-background-color: #0d1b2a;
+}
+
+.menu-bar .label {
+    -fx-text-fill: #f5c518;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #dde3ec;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #dde3ec;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #ffffff;
+}
+
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #14213d;
+    -fx-font-weight: bold;
+}
+
+/* ---------------- DIÁLOGOS ---------------- */
+.app-dialog {
+    -fx-background-color: #ffffff;
+}
+
+.app-dialog .header-panel {
+    -fx-background-color: #14213d;
+}
+
+.app-dialog .header-panel .label {
+    -fx-text-fill: #f5c518;
+    -fx-font-weight: bold;
+}

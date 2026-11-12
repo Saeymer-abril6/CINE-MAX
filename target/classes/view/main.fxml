@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="pe.edu.upeu.cinemax.controller.MainController"
+            prefWidth="1180.0" prefHeight="730.0">
+
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu text="Archivo">
+                    <items>
+                        <MenuItem text="Cerrar sesión" onAction="#onCerrarSesion"/>
+                        <MenuItem text="Salir" onAction="#onSalir"/>
+                    </items>
+                </Menu>
+                <Menu text="Módulos">
+                    <items>
+                        <MenuItem text="Películas" onAction="#irPeliculas"/>
+                        <MenuItem text="Salas" onAction="#irSalas"/>
+                        <MenuItem text="Funciones" onAction="#irFunciones"/>
+                        <MenuItem text="Productos" onAction="#irProductos"/>
+                        <MenuItem text="Clientes" onAction="#irClientes"/>
+                        <MenuItem text="Ventas" onAction="#irVentas"/>
+                        <MenuItem text="Historial" onAction="#irHistorial"/>
+                    </items>
+                </Menu>
+                <Menu text="Ayuda">
+                    <items>
+                        <MenuItem text="Acerca de" onAction="#onAcercaDe"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <center>
+        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE"/>
+    </center>
+</BorderPane>
